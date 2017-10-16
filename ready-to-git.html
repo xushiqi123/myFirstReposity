@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta  charset='utf-8'/>
+<link rel="stylesheet" type="text/css" href="webuploader/webuploader.css">
+<script src='jquery-1.11.3.js'></script>
+<script type="text/javascript" src="webuploader/webuploader.js"></script>
+
+
+
+</head>
+<body>
+<form id="form">
+    <input name="user" message="账号" value=""/>
+    <input name="name" value=""/>
+	<input name="name2" value=""/>
+    <input  type="button"  onClick="checkStart()" value="save" />
+</form>
+
+<div id='div1' class="div">
+	<div class="d2">   &nbsp;222333   </div>
+	<div class="d3">3</div>
+	<div class="d4">4</div>
+	<div class="d5">5</div>
+</div>
+<div class="click">click-change</div>
+
+	<script type="text/javascript">
+
+	console.log( $('.d2').html().toString().trim() )
+    function checkStart(){
+    check(form);
+}
+function check(form) {
+	console.log(form)
+	console.log(form.length)
+    for (i=0;i<form.length;i++){
+        var ele = form.elements[i];
+        var msg = ele.getAttribute('message');
+        if(msg && ele.value == ""){
+           alert(msg + "不能为空!");
+           form.elements[i].focus();
+           return false;
+       }
+   }
+   form.submit();
+}
+  </script>
+
+
+</body>
+</html>
